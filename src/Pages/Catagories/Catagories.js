@@ -4,7 +4,7 @@ import CatagoriesOption from './CatagoriesOption';
 const Catagories = () => {
     const [productCatagories, setProductCatagories] = useState([])
     useEffect(() => {
-        fetch('catagories.json')
+        fetch('http://localhost:5000/catagories')
             .then(res => res.json())
             .then(data => setProductCatagories(data))
     }, [])
