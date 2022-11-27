@@ -2,16 +2,82 @@
     {
         "id": "01",
         "title": "Academic Books",
-        "img": "https://ibb.co/pzhn1Vd"
+        "img": "https://ibb.co/pzhn1Vd",
+        "products": [
+            {
+                "catagory_id": "11",
+                "name": "Habluder Jonno Programming",
+                "location": "Mirpur,Dhaka",
+                "img": "https://ibb.co/7Y13KCP",
+                "yearsOfUse": "0.5",
+                "postedTime": "3.03 pm",
+                "orginalPrice": "150.00",
+                "resalePrice": "100.00"
+            },
+            {
+                "catagory_id": "11",
+                "name": "Learn Python 2 in 1",
+                "location": "Mirpur,Dhaka",
+                "img": "https://ibb.co/kXNtPtz",
+                "yearsOfUse": "0.5",
+                "postedTime": "3.03 pm",
+                "orginalPrice": "500.00",
+                "resalePrice": "400.00"
+            }
+        ]
     },
     {
         "id": "02",
         "title": "Novel Books",
-        "img": "https://ibb.co/xYNDKDB"
+        "img": "https://ibb.co/xYNDKDB",
+        "products": [
+            {
+                "catagory_id": "22",
+                "name": "Book Of Night Black",
+                "location": "Mirpur,Dhaka",
+                "img": "https://ibb.co/WBgDvXH",
+                "yearsOfUse": "1.0",
+                "postedTime": "3.03 pm",
+                "orginalPrice": "650.00",
+                "resalePrice": "500.00"
+            },
+            {
+                "catagory_id": "22",
+                "name": "Bridgerton",
+                "location": "Mirpur,Dhaka",
+                "img": "https://ibb.co/6D1KKVp",
+                "yearsOfUse": "1.5",
+                "postedTime": "3.03 pm",
+                "orginalPrice": "650.00",
+                "resalePrice": "500.00"
+            }
+        ]
     },
     {
         "id": "03",
         "title": "Magazine",
-        "img": "https://ibb.co/tCf9pHh"
+        "img": "https://ibb.co/tCf9pHh",
+        "products": [
+            {
+                "catagory_id": "33",
+                "name": "Business Magazine",
+                "location": "Mirpur,Dhaka",
+                "img": "https://ibb.co/VpcsB9V",
+                "yearsOfUse": "0.5",
+                "postedTime": "3.03 pm",
+                "orginalPrice": "100.00",
+                "resalePrice": "80.00"
+            },
+            {
+                "catagory_id": "33",
+                "name": "Success Magazine",
+                "location": "Mirpur,Dhaka",
+                "img": "https://ibb.co/MCxtLhj",
+                "yearsOfUse": "0.5",
+                "postedTime": "3.03 pm",
+                "orginalPrice": "100.00",
+                "resalePrice": "80.00"
+            }
+        ]
     }
 ]

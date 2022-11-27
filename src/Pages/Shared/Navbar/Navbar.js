@@ -5,6 +5,7 @@ const Navbar = () => {
 
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
+        <li><Link to='/login'>Log In</Link></li>
     </>
     return (
         <div className="navbar bg-base-100 flex justify-between">
