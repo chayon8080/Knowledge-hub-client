@@ -21,10 +21,6 @@ const ProductCard = ({ product }) => {
                     <p>Posted: {postedTime}</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <Link>
-                        <button className="mr-5 bg-black py-3 px-4 text-white products-btn">Book Now</button>
-
-                    </Link>
                     <label htmlFor="booking-modal" className="btn">open modal</label>
                 </div>
             </div>

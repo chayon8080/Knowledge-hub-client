@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom"
 import logo from "../../../assets/logo/knowledge hub.png"
+import { AuthContext } from '../../../contexts/AuthProvider';
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const signOut = () => {
+        logOut()
+            .then(() => { })
+            .then(() => { })
+    }
 
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/catagories'>Catagories</Link></li>
-        <li><Link to='/login'>Log In</Link></li>
+        {
+            user?.uid ?
+                <>
+                    <li><button onClick={signOut}>Log Out</button></li>
+                    <li>{user?.displayName}</li>
+
+                </> :
+                <li><Link to='/login'>Log In</Link></li>
+        }
     </>
     return (
         <div className="navbar bg-base-100 flex justify-between">
@@ -20,7 +37,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div>
-                    <img className='h-10 w-10 rounded-2xl' src={logo} alt="" />
+                    <img className='h-10 w-10 rounded-3xl' src={logo} alt="" />
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Knowledge-Hub</Link>
             </div>
