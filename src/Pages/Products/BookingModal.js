@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Form } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 
-const BookingModal = ({ setProductModal }) => {
+const BookingModal = ({ product }) => {
+    // const { name, resalePrice } = product
+    const { user } = useContext(AuthContext)
     return (
         <>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -14,8 +17,8 @@ const BookingModal = ({ setProductModal }) => {
                         ✕
                     </label>
                     <Form>
-                        <input type="text" placeholder="Name" className="input input-bordered w-full my-2" />
-                        <input type="email" placeholder="Email" className="input input-bordered w-full my-2" />
+                        <input type="text" placeholder="Name" defaultValue={user?.displayName} className="input input-bordered w-full my-2" />
+                        <input type="email" placeholder="Email" defaultValue={user?.email} className="input input-bordered w-full my-2" />
                         <input type="text" placeholder="Item Name" className="input input-bordered w-full my-2" />
                         <input type="text" placeholder="Price" className="input input-bordered w-full my-2" />
                         <input type="text" placeholder="Phone Number" className="input input-bordered w-full my-2" />

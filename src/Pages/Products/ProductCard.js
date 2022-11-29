@@ -20,8 +20,8 @@ const ProductCard = ({ product }) => {
                     <p>Using Time: {yearsOfUse}</p>
                     <p>Posted: {postedTime}</p>
                 </div>
-                <div className="card-actions justify-end">
-                    <label htmlFor="booking-modal" className="btn">open modal</label>
+                <div className="card-actions">
+                    <label htmlFor="booking-modal" className="btn">Book Now</label>
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { IconName } from "react-icons/fa";
 import { AuthContext } from '../../src/contexts/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -27,6 +28,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                toast("Log In  successfully")
                 form.reset();
                 setError('');
                 navigate(from, { replace: true });
