@@ -1,9 +1,12 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingModal from './BookingModal';
+
 import ProductCard from './ProductCard';
 
 const Products = () => {
     const products = useLoaderData();
+    console.log(products)
     const productsData = products.products;
     return (
         <div>
@@ -15,7 +18,7 @@ const Products = () => {
                     ></ProductCard>)
                 }
             </div>
-            {/* <BookingModal></BookingModal> */}
+            <BookingModal></BookingModal>
         </div>
 
     );
