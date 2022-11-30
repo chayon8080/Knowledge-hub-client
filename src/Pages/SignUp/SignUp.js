@@ -50,6 +50,7 @@ const SignUp = () => {
                     })
                     .catch(err => alert(err.messagea))
                 form.reset();
+                navigate('/')
             })
             .catch(error => {
                 console.error(error);
