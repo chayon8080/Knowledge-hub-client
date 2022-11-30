@@ -58,7 +58,7 @@ const SignUp = () => {
     }
     const saveBuyer = (name, email) => {
         const buyer = { name, email };
-        fetch('http://localhost:5000/buyers', {
+        fetch('https://knowledge-hub-server.vercel.app/buyers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

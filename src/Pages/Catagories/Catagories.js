@@ -4,7 +4,7 @@ import CatagoriesOption from './CatagoriesOption';
 const Catagories = () => {
     const [productCatagories, setProductCatagories] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/catagories')
+        fetch('https://knowledge-hub-server.vercel.app/catagories')
             .then(res => res.json())
             .then(data => setProductCatagories(data))
     }, [])

@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/categories/:id',
                 element: <PrivateRoute><Products></Products></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/catagories/${params.id}`)
+                loader: ({ params }) => fetch(`https://knowledge-hub-server.vercel.app/catagories/${params.id}`)
             },
             {
                 path: '/login',
