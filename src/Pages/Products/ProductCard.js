@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { CiLocationOn, CiUser } from "react-icons/ci";
-const ProductCard = ({ product }) => {
+import { CiLocationOn, CiUser, } from "react-icons/ci";
+const ProductCard = ({ product, setBookingProducrs }) => {
     const { id, name, img, location, sellerName, resalePrice, orginalPrice, yearsOfUse, postedTime } = product
     return (
         <div className="card card-compact w-96 bg-green-200 p-5 shadow-xl max-w-[1440px] mx-auto">
@@ -21,7 +20,7 @@ const ProductCard = ({ product }) => {
                     <p>Posted: {postedTime}</p>
                 </div>
                 <div className="card-actions">
-                    <label htmlFor="booking-modal" className="btn">Book Now</label>
+                    <label htmlFor="booking-modal" className="btn" onClick={() => setBookingProducrs(product)}>Book Now</label>
                 </div>
             </div>
         </div>

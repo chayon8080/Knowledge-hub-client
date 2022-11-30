@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MyOrders = () => {
+const AllSellers = () => {
     return (
         <div>
-            <h3>my orders</h3>
+            dsgsdgad
         </div>
     );
 };
 
-export default MyOrders;
+export default AllSellers;
