@@ -1,11 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const [error, setError] = useState('')
+    const navigate = useNavigate();
     const { createUser, googleSignin, updateUser } = useContext(AuthContext);
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [token] = useToken(createdUserEmail)
 
 
     const handleGoogleSignIn = () => {
@@ -18,6 +22,10 @@ const SignUp = () => {
                 console.error(error);
                 setError(error.message);
             })
+    }
+
+    if (token) {
+        navigate('/')
     }
     const handleSignup = event => {
         event.preventDefault();
@@ -32,14 +40,13 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 result = result.user
-                console.log(result)
                 toast('User created successfully')
                 const userInfo = {
                     displayName: name
                 }
                 updateUser(userInfo)
                     .then(() => {
-
+                        saveBuyer(name, email)
                     })
                     .catch(err => alert(err.messagea))
                 form.reset();
@@ -48,10 +55,22 @@ const SignUp = () => {
                 console.error(error);
                 setError(error.message)
             })
-
-
-
     }
+    const saveBuyer = (name, email) => {
+        const buyer = { name, email };
+        fetch('http://localhost:5000/buyers', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(buyer)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setCreatedUserEmail(email)
+            })
+    }
+
 
     return (
         <div className='text-center my-32'>

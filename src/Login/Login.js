@@ -3,11 +3,14 @@ import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { IconName } from "react-icons/fa";
 import { AuthContext } from '../../src/contexts/AuthProvider';
 import toast from 'react-hot-toast';
+import useToken from '../hooks/useToken';
 
 const Login = () => {
     const [error, setError] = useState('');
     const { signIn, loader, googleSignin } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [loginUserEmail, setLoginUserEmail] = useState('');
+    const [token] = useToken(loginUserEmail)
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
@@ -16,8 +19,16 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast('User log in successfully');
+                navigate(from, { replace: true });
             })
-            .then()
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            })
+    }
+    if (token) {
+        navigate(from, { replace: true })
     }
 
     const handleSubmit = event => {
@@ -28,10 +39,10 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                setLoginUserEmail(email)
                 toast("Log In  successfully")
-                form.reset();
                 setError('');
-                navigate(from, { replace: true });
+                form.reset();
             })
             .catch(error => {
                 console.error(error);
