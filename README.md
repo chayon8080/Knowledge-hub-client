@@ -1,5 +1,5 @@
 Project Name: KnowledgeHub
-Live Site: https://furniture-ca72a.web.app/
+Live Site: https://knowledge-hub-f3894.web.app/
 Knowledge Hub is a resale book online shop. Here you can buy your desire book without any hassle.
 
 For frontend development I used:
