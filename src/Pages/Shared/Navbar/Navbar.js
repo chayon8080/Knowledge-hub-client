@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import logo from "../../../assets/logo/knowledge hub.png"
 import { AuthContext } from '../../../contexts/AuthProvider';
 const Navbar = () => {
-
     const { user, logOut } = useContext(AuthContext)
 
     const signOut = () => {
